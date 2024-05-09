@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react'
 import useComputle from './/logic'
 import Grid from './components/grid'
+import Letters from './components/letters'
 
 export default function Computle({solution}){
-    const {currentGuess, guesses, turn, handleKeyup} = useComputle(solution)
+    const {currentGuess, guesses, turn, usedKeys, handleKeyup} = useComputle(solution)
     
     useEffect(() => {
         window.addEventListener('keyup', handleKeyup)
@@ -12,9 +13,17 @@ export default function Computle({solution}){
 
     return (
         <div>
-            <div class="maincontent">
-                <Grid currentGuess={currentGuess} guesses ={guesses} turn={turn}/>
+            <div class="container">
+                <div class="maincontent">
+                    <Grid currentGuess={currentGuess} guesses ={guesses} turn={turn}/>
+                </div>
+
+                <div class="letters">
+                    <div>letters used</div>
+                    <Letters usedKeys = {usedKeys}/>
+                </div>
             </div>
+            
 
             <div class="input">
                 <div>welcome to computle!</div>

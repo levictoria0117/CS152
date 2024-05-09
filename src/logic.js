@@ -12,7 +12,7 @@ const useComputle = (solution) => {
     console.log('formatted guess - ', currentGuess)
     let solutionArray = [...solution]
     let formattedGuess = [...currentGuess].map((l) => {
-      return {key: l, color: 'grey'}
+      return {key: l, color: 'red'}
     })
 
     formattedGuess.forEach((l, i) => {
@@ -48,6 +48,7 @@ const useComputle = (solution) => {
       return prevTurn + 1
     })
     setUsedKeys(prevUsedKeys => {
+      let newKeys = {...prevUsedKeys}
       formattedGuess.forEach(l => {
         const currentColor = prevUsedKeys[l.key]
 
@@ -59,8 +60,8 @@ const useComputle = (solution) => {
           prevUsedKeys[l.key] = 'yellow'
           return
         }
-        if (l.color === 'grey' && currentColor !== ('green' || 'yellow')) {
-          prevUsedKeys[l.key] = 'grey'
+        if (l.color === 'red' && currentColor !== ('green' || 'yellow')) {
+          prevUsedKeys[l.key] = 'red'
           return
         }
       })

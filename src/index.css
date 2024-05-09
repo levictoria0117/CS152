@@ -1,7 +1,7 @@
 body {
     background-color: black;
     text-align: left;
-    font-family: verdana;
+    font-family: 'Courier New', Courier, monospace;
     color:#bebebe;
     margin: 0;
   }
@@ -12,6 +12,12 @@ body {
     font-size: 30px;
   }
   
+  h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
   h2 {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -32,20 +38,25 @@ body {
   
   .wrapper > div {
     border-radius: 5px;
-    padding: 20px;
   }
   
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 10px;
+    margin: 10px;
   }
   
   .maincontent{
     background-color: rgb(34, 34, 34);
-    padding: 50px;
+    padding: 60px;
     border-radius: 10px;
+    flex-grow: 1;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
   }
   
   .input{
@@ -55,17 +66,25 @@ body {
     border-radius: 10px;
     background-color: rgb(0, 0, 0);
   }
+ 
+  .letters{
+    background-color: rgb(34, 34, 34);
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
   
   .menu {
     background-color: rgb(25, 25, 25);
     grid-column: 1;
-    grid-row: 1 / 14;
+    padding: 30px;
   }
   
   .mainbackground {
     background-color: rgb(25, 25, 25);
-    grid-row: 1 / 14;
-    grid-column: 2 / 5;
+    grid-column: 2 / 6;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   
   /* menu */
@@ -120,11 +139,27 @@ body {
     background: #608b60;
     border-color: #ffffff;
   }
-  .row > div.grey {
-    background: #af6c6c;
+  .row > div.red {
+    background: #a35555;
     border-color: #ffffff;
   }
   .row > div.yellow {
     background: #b3af61;
     border-color: #ffffff;
+  }
+
+  /*letters*/
+
+  .letters > div {
+    font-size: 16;
+  }
+
+  .letters > div.green {
+    color: #5ac85a;
+  }
+  .letters > div.yellow {
+    color: #e2cc68;
+  }
+  .letters > div.red {
+    color: #a35555;
   }

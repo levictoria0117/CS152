@@ -44,8 +44,9 @@ function App() {
             </summary>
             <p>
               <h2>5-letter words</h2>
-              <h2>Timed Mode</h2>
-              <h2>Multiplayer Mode</h2>
+              <h2>timed mode</h2>
+              <h2>hard mode</h2>
+              <h2>multiplayer mode</h2>
             </p>
           </details>
 
