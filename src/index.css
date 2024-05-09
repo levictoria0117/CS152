@@ -1,0 +1,130 @@
+body {
+    background-color: black;
+    text-align: left;
+    font-family: verdana;
+    color:#bebebe;
+    margin: 0;
+  }
+  
+  h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(114, 197, 238);
+    font-size: 30px;
+  }
+  
+  h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(247, 255, 154);
+  }
+  
+  /* layout */
+  * {
+    box-sizing: border-box;
+  }
+  
+  .wrapper > div {
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    gap: 10px;
+  }
+  
+  .maincontent{
+    background-color: rgb(34, 34, 34);
+    padding: 50px;
+    border-radius: 10px;
+  }
+  
+  .input{
+    margin-top: 10px;
+    padding: 20px;
+    padding-bottom: 180px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .menu {
+    background-color: rgb(25, 25, 25);
+    grid-column: 1;
+    grid-row: 1 / 14;
+  }
+  
+  .mainbackground {
+    background-color: rgb(25, 25, 25);
+    grid-row: 1 / 14;
+    grid-column: 2 / 5;
+  }
+  
+  /* menu */
+  details {
+    user-select: none;
+  }
+  
+  details>summary span.icon {
+    padding: 14px;
+    transition: all 0.3s;
+  }
+  
+  details[open] summary span.icon {
+    transform: rotate(90deg);
+  }
+  
+  summary {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  p {
+    padding-left:12px;
+  }
+  
+  /* rows */
+  .row {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .row > div {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(114, 197, 238);
+    margin: 4px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    ;
+  }
+  .row > div.green {
+    background: #608b60;
+    border-color: #ffffff;
+  }
+  .row > div.grey {
+    background: #747474;
+    border-color: #ffffff;
+  }
+  .row > div.yellow {
+    background: #b3af61;
+    border-color: #ffffff;
+  }

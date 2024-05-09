@@ -1,0 +1,14 @@
+{
+    "solutions": [
+        {"word" : "debug", "id" : "1"},
+        {"word" : "crash", "id" : "2"},
+        {"word" : "input", "id" : "3"},
+        {"word" : "cache", "id" : "4"},
+        {"word" : "logic", "id" : "5"},
+        {"word" : "pixel", "id" : "6"},
+        {"word" : "parse", "id" : "7"},
+        {"word" : "ascii", "id" : "8"},
+        {"word" : "bytes", "id" : "9"},
+        {"word" : "array", "id" : "10"}
+    ]
+}
