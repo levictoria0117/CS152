@@ -9,7 +9,22 @@
         {"word" : "parse", "id" : "7"},
         {"word" : "ascii", "id" : "8"},
         {"word" : "bytes", "id" : "9"},
-        {"word" : "array", "id" : "10"}
+        {"word" : "array", "id" : "10"},
+        {"word" : "false", "id" : "11"},
+        {"word" : "while", "id" : "12"},
+        {"word" : "stack", "id" : "13"},
+        {"word" : "class", "id" : "14"},
+        {"word" : "error", "id" : "15"},
+        {"word" : "index", "id" : "16"},
+        {"word" : "shell", "id" : "17"},
+        {"word" : "regex", "id" : "18"},
+        {"word" : "tuple", "id" : "19"},
+        {"word" : "union", "id" : "20"},
+        {"word" : "files", "id" : "21"},
+        {"word" : "scope", "id" : "22"},
+        {"word" : "graph", "id" : "23"},
+        {"word" : "linux", "id" : "24"},
+        {"word" : "query", "id" : "25"}
     ],
     "letters": [
         {"key": "a"},

@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
-import Computle from './computle'
+import Computle from './computle';
+import Timer from './timer';
 
 function App() {
 
-  const [solution, setSolution] = useState(null)
+  const [solution, setSolution] = useState(null);
+  const [timerOn, setTimerOn] = useState(false);
+  const [normalMode, setNormalMode] = useState(true);
+  const [hardMode, setHardMode] = useState(false);
+
 
   useEffect(() => {
     fetch('http://localhost:3001/solutions')
@@ -43,8 +48,16 @@ function App() {
               <h3>difficulty</h3>
             </summary>
             <p>
-              <h2>5-letter words</h2>
-              <h2>timed mode</h2>
+              <h2 onClick = {()=>{
+                setNormalMode(true);
+                setTimerOn(false);
+                setHardMode(false);
+              }}>5-letter words</h2>
+              <h2 onClick = {() =>{
+                setTimerOn(timerOn => {
+                  return !timerOn;
+                });
+              }}>timed mode</h2>
               <h2>hard mode</h2>
               <h2>multiplayer mode</h2>
             </p>
@@ -64,7 +77,8 @@ function App() {
         </div>
         <div class="mainbackground">
           <h2>
-            {solution && <Computle solution = {solution}/>}
+            {normalMode && solution && <Computle solution = {solution}/>}
+            {timerOn && <Timer/>}
           </h2>
         </div>
       </div>
