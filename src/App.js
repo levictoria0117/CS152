@@ -3,12 +3,10 @@ import Computle from './computle';
 import Timer from './timer';
 
 function App() {
-
   const [solution, setSolution] = useState(null);
   const [timerOn, setTimerOn] = useState(false);
   const [normalMode, setNormalMode] = useState(true);
-  const [hardMode, setHardMode] = useState(false);
-
+  const [wordLength, setWordLength] = useState(5);
 
   useEffect(() => {
     fetch('http://localhost:3001/solutions')
@@ -17,18 +15,18 @@ function App() {
       const random = json[Math.floor(Math.random()*json.length)]
       setSolution(random.word)
     })
-  },[setSolution])
+  },[]);
 
   return (
     <div className="App">
-      <div class="wrapper">
-        <div class="menu">
+      <div className="wrapper">
+        <div className="menu">
           <h1>computle</h1> <br></br>
 
           <h2>menu</h2>
           <details>
             <summary>
-              <span class="icon">﹥</span>
+              <span className="icon">﹥</span>
               <h3>how to play</h3>
             </summary>
             <p>
@@ -44,41 +42,58 @@ function App() {
 
           <details>
             <summary>
-              <span class="icon">﹥</span>
+              <span className="icon">﹥</span>
               <h3>difficulty</h3>
             </summary>
             <p>
-              <h2 onClick = {()=>{
+              <button className="modes" onClick={() => {
                 setNormalMode(true);
                 setTimerOn(false);
-                setHardMode(false);
-              }}>5-letter words</h2>
-              <h2 onClick = {() =>{
-                setTimerOn(timerOn => {
-                  return !timerOn;
-                });
-              }}>timed mode</h2>
-              <h2>hard mode</h2>
-              <h2>multiplayer mode</h2>
+                setWordLength(5)
+              }}>5-letter words</button>
+
+              <button className="modes" onClick={() => {
+                setNormalMode(true);
+                setTimerOn(false);
+                setWordLength(6)
+              }}>6-letter words</button>
+
+              <button className="modes" onClick={() => {
+                setNormalMode(true);
+                setTimerOn(false);
+                setWordLength(7)
+              }}>7-letter words</button>
+
+              <button className="modes" onClick={() => {
+                setNormalMode(true);
+                setTimerOn(false);
+                setWordLength(8)
+              }}>8-letter words</button>
+
+              <button className="modes" onClick={() => {
+                setTimerOn(timerOn => !timerOn);
+              }}>timed mode</button>
+
+              <button className="modes" onClick={() => {
+                setNormalMode(false);
+              }}>hard mode</button>
             </p>
           </details>
 
           <details>
             <summary>
-              <span class="icon">﹥</span>
+              <span className="icon">﹥</span>
               <h3>about</h3>
             </summary>
             <p>
-              <h2>A Wordle variant centered around computer science terms.</h2>
-              <h2> Created by Joshua Tanaka and Victoria Le</h2>
             </p>
           </details>
           
         </div>
-        <div class="mainbackground">
+        <div className="mainbackground">
           <h2>
-            {normalMode && solution && <Computle solution = {solution}/>}
-            {timerOn && <Timer/>}
+            {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
+            {timerOn && <Timer />}
           </h2>
         </div>
       </div>
@@ -86,4 +101,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
