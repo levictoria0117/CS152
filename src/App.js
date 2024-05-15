@@ -86,6 +86,8 @@ function App() {
               <h3>about</h3>
             </summary>
             <p>
+              <h2>A Wordle variant centered around computer science terms.</h2>
+              <h2> Created by Joshua Tanaka and Victoria Le</h2>
             </p>
           </details>
           
