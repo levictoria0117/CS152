@@ -114,8 +114,8 @@ function App() {
         </div>
         <div className="mainbackground">
           <h2>
-            {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
             {timerOn && <Timer />}
+            {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
           </h2>
         </div>
       </div>

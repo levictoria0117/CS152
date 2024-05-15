@@ -29,7 +29,7 @@ const Timer = (clickOn) => {
     }, [count]);
 
     return (
-        <div>
+        <div className='timer'>
             <h2>Time: {display}</h2>
         </div>
     );
