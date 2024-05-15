@@ -8,7 +8,7 @@ npm install
 Tnen install the server: 
 npm install -g json-server
 
-Start the server in on terminal: 
+Start the server in one terminal: 
 npx json-server src/db.json --port 3001
 
 Then in another terminal, run the following to start the application: 
