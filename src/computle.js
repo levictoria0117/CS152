@@ -28,8 +28,8 @@ export default function Computle({ solution, normalMode, wordLength}) {
         </div>
 
         <div className="input">
-          <div>welcome to hard mode of computle!</div>
-          <div>there won't be a color coded chart on the side and the letters on the grid will disappear after a while</div>
+          <div>welcome to hard mode of computle! there won't be a color coded chart on the side and the 
+            letters will not appear on the grid.</div>
           <div>good luck!!</div>
           <br></br>
           <div>enter your guess: {currentGuess}</div>

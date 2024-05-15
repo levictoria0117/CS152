@@ -30,14 +30,14 @@ function App() {
               <h3>how to play</h3>
             </summary>
             <p>
-              <h2>To begin, enter your guess in the terminal.</h2>
-              <h2>The panel above will display your guess in a grid.</h2>
-              <h2>The letters will be color coded to indicate the following:</h2>
-              <h2>RED: The letter is incorrect and not in the word.</h2>
-              <h2>YELLOW: The letter is in the word, but not in the correct place.</h2>
-              <h2>GREEN: The letter is in the word and is in the correct place.</h2>
-              <h2>Refreshing the page will restart the entire game and give you a new word.</h2>
+              To begin, enter your guess in the terminal.
+              The panel above will display your guess in a grid.
             </p>
+            <p>The letters will be color coded to indicate the following:</p>
+            <p>RED: The letter is incorrect and not in the word.</p>
+            <p>YELLOW: The letter is in the word, but not in the correct place.</p>
+            <p>GREEN: The letter is in the word and is in the correct place.</p>
+            <p>Refreshing the page will restart the entire game and give you a new word.</p>
           </details>
 
           <details>
@@ -45,6 +45,7 @@ function App() {
               <span className="icon">﹥</span>
               <h3>difficulty</h3>
             </summary>
+
             <p>
               <button className="modes" onClick={() => {
                 setNormalMode(true);
@@ -70,13 +71,33 @@ function App() {
                 setWordLength(8)
               }}>8-letter words</button>
 
-              <button className="modes" onClick={() => {
-                setTimerOn(timerOn => !timerOn);
-              }}>timed mode</button>
+            <details>
+                <summary>
+                  <span className="icon2">﹥</span>
+                  <button className="modes" onClick={() => {
+                    setTimerOn(timerOn => !timerOn);
+                  }}>timed mode</button>
+                </summary>
+                  <p>
+                    Want a challenge? This mode has the same gameplay as the normal mode. 
+                    But now you're in a race against the clock! Enter your own time or try to solve
+                    the puzzle in 1 minute. Simply click to enable or disable the timer.
+                  </p>
+              </details>
 
-              <button className="modes" onClick={() => {
-                setNormalMode(false);
-              }}>hard mode</button>
+              <details>
+                <summary>
+                  <span className="icon2">﹥</span>
+                  <button className="modes" onClick={() => {
+                    setNormalMode(false);
+                  }}>hard mode</button>
+                </summary>
+                  <p>
+                    Have good memory? Hard mode hides the color coded letter chart
+                    and the letters won't show up on the grid. You'll have to remember
+                    what words you've tried and which letters are correct.
+                  </p>
+              </details>
             </p>
           </details>
 
@@ -85,8 +106,9 @@ function App() {
               <span className="icon">﹥</span>
               <h3>about</h3>
             </summary>
-            <p>
-            </p>
+            <p>A Wordle variant centered around computer science terms.</p>
+            <p>Created by Joshua Tanaka and Victoria Le</p>
+            <a href="https://github.com/levictoria0117/CS152" target="_blank">GitHub Repository</a>
           </details>
           
         </div>
