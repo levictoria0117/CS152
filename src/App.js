@@ -3,17 +3,20 @@ import Computle from './computle';
 import Timer from './timer';
 import endGame from './timer';
 function App() {
-
   const [solution, setSolution] = useState(null);
   const [timerOn, setTimerOn] = useState(false);
   const [mode, setMode] = useState(6);
   const [jsonSolution, setJsonSolution] = useState('http://localhost:3001/' + mode + '-solutions')
   const [endGame, setEndGame] = useState(false);
+  const [normalMode, setNormalMode] = useState(true);
+  const [wordLength, setWordLength] = useState(5);
+  
   function CallBack(childData){
     return(
       setEndGame(childData)
     )
   }
+
   useEffect(() => {
     fetch(jsonSolution)
     .then(res => res.json())
@@ -21,75 +24,107 @@ function App() {
       const random = json[Math.floor(Math.random()*json.length)]
       setSolution(random.word)
     })
-  },[setSolution])
+  },[]);
 
   return (
     <div className="App">
-      <div class="wrapper">
-        <div class="menu">
+      <div className="wrapper">
+        <div className="menu">
           <h1>computle</h1> <br></br>
 
           <h2>menu</h2>
           <details>
             <summary>
-              <span class="icon">﹥</span>
+              <span className="icon">﹥</span>
               <h3>how to play</h3>
             </summary>
             <p>
-              <h2>To begin, enter your guess in the terminal.</h2>
-              <h2>The panel above will display your guess in a grid.</h2>
-              <h2>The letters will be color coded to indicate the following:</h2>
-              <h2>RED: The letter is incorrect and not in the word.</h2>
-              <h2>YELLOW: The letter is in the word, but not in the correct place.</h2>
-              <h2>GREEN: The letter is in the word and is in the correct place.</h2>
-              <h2>Refreshing the page will restart the entire game and give you a new word.</h2>
+              To begin, enter your guess in the terminal.
+              The panel above will display your guess in a grid.
             </p>
+            <p>The letters will be color coded to indicate the following:</p>
+            <p>RED: The letter is incorrect and not in the word.</p>
+            <p>YELLOW: The letter is in the word, but not in the correct place.</p>
+            <p>GREEN: The letter is in the word and is in the correct place.</p>
+            <p>Refreshing the page will restart the entire game and give you a new word.</p>
           </details>
 
           <details>
             <summary>
-              <span class="icon">﹥</span>
+              <span className="icon">﹥</span>
               <h3>difficulty</h3>
             </summary>
+
             <p>
-              <h2 onClick = {()=>{
-                setMode(5);
-              }}>5-letter words</h2>
-              <h2 onClick = {()=>{
-                setMode(6);
-              }}>6-letters words</h2>
-              <h2 onClick = {()=>{
-                setMode(7);
-              }}>7-letters words</h2>
-              <h2 onClick = {()=>{
-                setMode(8);
-              }}>8-letters words</h2>
-              <h2 onClick = {() =>{
-                setTimerOn(timerOn => {
-                  return !timerOn;
-                });
-              }}>timed mode</h2>
-              <h2>hard mode</h2>
-              <h2>multiplayer mode</h2>
+              <button className="modes" onClick={() => {
+                setNormalMode(true);
+                setTimerOn(false);
+                setWordLength(5)
+              }}>5-letter words</button>
+
+              <button className="modes" onClick={() => {
+                setNormalMode(true);
+                setTimerOn(false);
+                setWordLength(6)
+              }}>6-letter words</button>
+
+              <button className="modes" onClick={() => {
+                setNormalMode(true);
+                setTimerOn(false);
+                setWordLength(7)
+              }}>7-letter words</button>
+
+              <button className="modes" onClick={() => {
+                setNormalMode(true);
+                setTimerOn(false);
+                setWordLength(8)
+              }}>8-letter words</button>
+
+            <details>
+                <summary>
+                  <span className="icon2">﹥</span>
+                  <button className="modes" onClick={() => {
+                    setTimerOn(timerOn => !timerOn);
+                  }}>timed mode</button>
+                </summary>
+                  <p>
+                    Want a challenge? This mode has the same gameplay as the normal mode. 
+                    But now you're in a race against the clock! Enter your own time or try to solve
+                    the puzzle in 1 minute. Simply click to enable or disable the timer.
+                  </p>
+              </details>
+
+              <details>
+                <summary>
+                  <span className="icon2">﹥</span>
+                  <button className="modes" onClick={() => {
+                    setNormalMode(false);
+                  }}>hard mode</button>
+                </summary>
+                  <p>
+                    Have good memory? Hard mode hides the color coded letter chart
+                    and the letters won't show up on the grid. You'll have to remember
+                    what words you've tried and which letters are correct.
+                  </p>
+              </details>
             </p>
           </details>
 
           <details>
             <summary>
-              <span class="icon">﹥</span>
+              <span className="icon">﹥</span>
               <h3>about</h3>
             </summary>
-            <p>
-              <h2>A Wordle variant centered around computer science terms.</h2>
-              <h2> Created by Joshua Tanaka and Victoria Le</h2>
-            </p>
+            <p>A Wordle variant centered around computer science terms.</p>
+            <p>Created by Joshua Tanaka and Victoria Le</p>
+            <a href="https://github.com/levictoria0117/CS152" target="_blank">GitHub Repository</a>
           </details>
           
         </div>
-        <div class="mainbackground">
+        <div className="mainbackground">
           <h2>
-            {solution && <Computle solution = {solution} n = {mode} gameOver = {false}/>}
-            {timerOn && <Timer handleCallback = {CallBack}/>} 
+            {timerOn && <Timer />}
+            {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
           </h2>
         </div>
       </div>
@@ -97,4 +132,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

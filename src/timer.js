@@ -29,7 +29,7 @@ const Timer = (props) => {
     }, [count, props, gameOver]);
 
     return (
-        <div>
+        <div className='timer'>
             <h2>Time: {display}</h2>
             {props.handleCallback(gameOver)}
         </div>
