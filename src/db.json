@@ -1,5 +1,5 @@
 {
-    "solutions": [
+    "5-solutions": [
         {"word" : "debug", "id" : "1"},
         {"word" : "crash", "id" : "2"},
         {"word" : "input", "id" : "3"},
@@ -24,7 +24,69 @@
         {"word" : "scope", "id" : "22"},
         {"word" : "graph", "id" : "23"},
         {"word" : "linux", "id" : "24"},
-        {"word" : "query", "id" : "25"}
+        {"word" : "query", "id" : "25"},
+        {"word" : "float", "id" : "26"},
+        {"word" : "break", "id" : "27"},
+        {"word" : "short", "id" : "28"},
+        {"word" : "catch", "id" : "29"},
+        {"word" : "final", "id" : "30"}
+    ],
+    "6-solutions":[
+        {"word" : "script", "id" : "1"},
+        {"word" : "effect", "id" : "2"},
+        {"word" : "laptop", "id" : "3"},
+        {"word" : "random", "id" : "4"},
+        {"word" : "binary", "id" : "5"},
+        {"word" : "scheme", "id" : "6"},
+        {"word" : "import", "id" : "7"},
+        {"word" : "folder", "id" : "8"},
+        {"word" : "inline", "id" : "9"},
+        {"word" : "memory", "id" : "10"},
+        {"word" : "object", "id" : "11"},
+        {"word" : "output", "id" : "12"},
+        {"word" : "parser", "id" : "13"},
+        {"word" : "plugin", "id" : "14"},
+        {"word" : "cookie", "id" : "15"},
+        {"word" : "server", "id" : "16"},
+        {"word" : "console", "id" : "17"},
+        {"word" : "thread", "id" : "18"},
+        {"word" : "system", "id" : "19"},
+        {"word" : "client", "id" : "20"},
+        {"word" : "python", "id" : "21"},
+        {"word" : "kernel", "id" : "22"},
+        {"word" : "source", "id" : "23"},
+        {"word" : "string", "id" : "24"},
+        {"word" : "double", "id" : "25"},
+        {"word" : "syntax", "id" : "26"},
+        {"word" : "return", "id" : "27"},
+        {"word" : "public", "id" : "28"},
+        {"word" : "assert", "id" : "29"},
+        {"word" : "except", "id" : "30"}
+
+    ],
+    "7-solutions":[
+        {"word" : "extends", "id" : "1"},
+        {"word" : "exports", "id" : "2"},
+        {"word" : "private", "id" : "3"},
+        {"word" : "boolean", "id" : "4"},
+        {"word" : "default", "id" : "5"},
+        {"word" : "finally", "id" : "6"},
+        {"word" : "program", "id" : "7"},
+        {"word" : "compile", "id" : "8"},
+        {"word" : "network", "id" : "9"},
+        {"word" : "machine", "id" : "10"}
+    ],
+    "8-solutions":[
+        {"word" : "keyboard", "id" : "1"},
+        {"word" : "continue", "id" : "2"},
+        {"word" : "abstract", "id" : "3"},
+        {"word" : "terminal", "id" : "4"},
+        {"word" : "internet", "id" : "5"},
+        {"word" : "download", "id" : "6"},
+        {"word" : "debugger", "id" : "7"},
+        {"word" : "hardware", "id" : "8"},
+        {"word" : "software", "id" : "9"},
+        {"word" : "encoding", "id" : "10"}
     ],
     "letters": [
         {"key": "a"},

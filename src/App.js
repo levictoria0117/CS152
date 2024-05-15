@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import Computle from './computle';
 import Timer from './timer';
-
+import endGame from './timer';
 function App() {
 
   const [solution, setSolution] = useState(null);
   const [timerOn, setTimerOn] = useState(false);
-  const [normalMode, setNormalMode] = useState(true);
-  const [hardMode, setHardMode] = useState(false);
-
-
+  const [mode, setMode] = useState(6);
+  const [jsonSolution, setJsonSolution] = useState('http://localhost:3001/' + mode + '-solutions')
+  const [endGame, setEndGame] = useState(false);
+  function CallBack(childData){
+    return(
+      setEndGame(childData)
+    )
+  }
   useEffect(() => {
-    fetch('http://localhost:3001/solutions')
+    fetch(jsonSolution)
     .then(res => res.json())
     .then(json => {
       const random = json[Math.floor(Math.random()*json.length)]
@@ -49,10 +53,17 @@ function App() {
             </summary>
             <p>
               <h2 onClick = {()=>{
-                setNormalMode(true);
-                setTimerOn(false);
-                setHardMode(false);
+                setMode(5);
               }}>5-letter words</h2>
+              <h2 onClick = {()=>{
+                setMode(6);
+              }}>6-letters words</h2>
+              <h2 onClick = {()=>{
+                setMode(7);
+              }}>7-letters words</h2>
+              <h2 onClick = {()=>{
+                setMode(8);
+              }}>8-letters words</h2>
               <h2 onClick = {() =>{
                 setTimerOn(timerOn => {
                   return !timerOn;
@@ -77,8 +88,8 @@ function App() {
         </div>
         <div class="mainbackground">
           <h2>
-            {normalMode && solution && <Computle solution = {solution}/>}
-            {timerOn && <Timer/>}
+            {solution && <Computle solution = {solution} n = {mode} gameOver = {false}/>}
+            {timerOn && <Timer handleCallback = {CallBack}/>} 
           </h2>
         </div>
       </div>

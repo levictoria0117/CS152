@@ -4,9 +4,10 @@ import Grid from './components/grid'
 import Letters from './components/letters'
 import EndMessage from './components/endmessage'
 
-export default function Computle({solution}){
-    const {currentGuess, guesses, turn, usedKeys, isCorrect, handleKeyup} = useComputle(solution)
+export default function Computle({solution, n, gameOver}){
+    const {currentGuess, guesses, turn, usedKeys, isCorrect, handleKeyup} = useComputle(solution, n)
     const [showMessage, setShowMessage] = useState(false)
+    const [timeGame, setTimeGame] = useState(gameOver);
     
     useEffect(() => {
         window.addEventListener('keyup', handleKeyup)
@@ -14,7 +15,7 @@ export default function Computle({solution}){
             setTimeout(() => setShowMessage(true), 2000)
             window.removeEventListener('keyup', handleKeyup)
         }
-        if (turn > 5) {
+        if (turn > n) {
             setTimeout(() => setShowMessage(true), 2000)
             window.removeEventListener('keyup', handleKeyup)
         }
