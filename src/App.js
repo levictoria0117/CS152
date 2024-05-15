@@ -123,8 +123,8 @@ function App() {
         </div>
         <div className="mainbackground">
           <h2>
-            {timerOn && <Timer />}
             {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
+            {timerOn && <Timer />}
           </h2>
         </div>
       </div>
