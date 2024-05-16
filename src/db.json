@@ -1,5 +1,5 @@
 {
-    "solutions": [
+    "5-solutions": [
         {"word" : "debug", "id" : "1"},
         {"word" : "crash", "id" : "2"},
         {"word" : "input", "id" : "3"},
