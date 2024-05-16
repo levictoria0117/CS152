@@ -72,17 +72,18 @@ const useComputle = (solution) => {
   }
 
   const handleKeyup = ({ key }) => {
+    //print in terminal instead of console
     if (key === 'Enter') {
       if (turn > 5) {
-        console.log('you used all your guesses!')
+        console.log('no more guesses left')
         return
       }
       if (history.includes(currentGuess)) {
-        console.log('you already tried that word.')
+        console.log('you already tried that word')
         return
       }
       if (currentGuess.length !== 5) {
-        console.log('word must be 5 chars.')
+        console.log('word must be five letters')
         return
       }
       const formatted = formatGuess()

@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from 'react'
 
-const Timer = (props) => {
-    const [count, setCount] = useState(60);
+const Timer = (clickOn) => {
+    const [count, setCount] = useState(60*1);
     const [display, setDisplay] = useState("");
-    const [gameOver, setGameOver] = useState(false);
+    // const [gameOver, setGameOver] = useState(false);
 
+    
     useEffect(() => {
+        //Implementing the setInterval method
         const interval = setInterval(() => {
             if(count > 0){
               setCount(count - 1);
-              let seconds = count % 60;
-              let minutes = parseInt(count / 60);
+              let seconds = count%60;
+              let minutes = parseInt(count/60);
               if(seconds < 10){
                 seconds = "0"+ seconds; 
               }
@@ -20,19 +22,21 @@ const Timer = (props) => {
               setDisplay(minutes + ":" + seconds);
             } else {
                 setDisplay("Game Over!");
-                setGameOver(true)
             }
         }, 1000);
  
-        
+        //Clearing the interval
         return () => clearInterval(interval);
-    }, [count, props, gameOver]);
+    }, [count]);
 
     return (
-        <div>
+        <div className='timer'>
             <h2>Time: {display}</h2>
-            {props.handleCallback(gameOver)}
         </div>
+        // <div>
+        //     <h2>Time: {display}</h2>
+        //     {props.handleCallback(gameOver)}
+        // </div>
     );
 }
 

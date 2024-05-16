@@ -1,30 +1,46 @@
 import { useEffect, useState } from "react";
 import Computle from './computle';
 import Timer from './timer';
-import endGame from './timer';
+// import endGame from './timer';
+
 function App() {
+
   const [solution, setSolution] = useState(null);
   const [timerOn, setTimerOn] = useState(false);
-  const [mode, setMode] = useState(6);
-  const [jsonSolution, setJsonSolution] = useState('http://localhost:3001/' + mode + '-solutions')
-  const [endGame, setEndGame] = useState(false);
   const [normalMode, setNormalMode] = useState(true);
   const [wordLength, setWordLength] = useState(5);
-  
-  function CallBack(childData){
-    return(
-      setEndGame(childData)
-    )
-  }
+
+  // const [solution, setSolution] = useState(null);
+  // const [timerOn, setTimerOn] = useState(false);
+  // const [mode, setMode] = useState(6);
+  // const [jsonSolution, setJsonSolution] = useState('http://localhost:3001/' + mode + '-solutions')
+  // const [endGame, setEndGame] = useState(false);
+  // const [normalMode, setNormalMode] = useState(true);
+  // const [wordLength, setWordLength] = useState(5);
 
   useEffect(() => {
-    fetch(jsonSolution)
+    fetch('http://localhost:3001/solutions')
     .then(res => res.json())
     .then(json => {
       const random = json[Math.floor(Math.random()*json.length)]
       setSolution(random.word)
     })
   },[]);
+
+    // function CallBack(childData){
+    //   return(
+    //     setEndGame(childData)
+    //   )
+    // }
+
+    // useEffect(() => {
+    //   fetch(jsonSolution)
+    //   .then(res => res.json())
+    //   .then(json => {
+    //     const random = json[Math.floor(Math.random()*json.length)]
+    //     setSolution(random.word)
+    //   })
+    // },[]);
 
   return (
     <div className="App">
@@ -123,8 +139,10 @@ function App() {
         </div>
         <div className="mainbackground">
           <h2>
-            {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
             {timerOn && <Timer />}
+            {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
+            {/* {solution && <Computle solution={solution} normalMode={normalMode} wordLength={wordLength}/>}
+            {timerOn && <Timer />} */}
           </h2>
         </div>
       </div>
