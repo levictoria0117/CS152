@@ -8,7 +8,7 @@ body {
 
   p {
     margin-left: 7px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   a {
@@ -24,13 +24,13 @@ body {
   h2 {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .modes{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -46,7 +46,7 @@ body {
   h3 {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     color: rgb(247, 255, 154);
   }
   
@@ -140,7 +140,7 @@ body {
     display: block;
     width: 60px;
     height: 60px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 2px solid rgb(203, 203, 203);
     margin: 4px;
     border-radius: 5px;
     text-align: center;
@@ -153,15 +153,15 @@ body {
   }
   .row > div.green {
     background: #608b60;
-    border-color: #ffffff;
+    border-color: #b9b9b9;
   }
   .row > div.red {
     background: #a35555;
-    border-color: #ffffff;
+    border-color: #b9b9b9;
   }
   .row > div.yellow {
     background: #b3af61;
-    border-color: #ffffff;
+    border-color: #b9b9b9;
   }
 
   .rowfade {
@@ -201,13 +201,13 @@ body {
   } */
 
   .letters > div.green {
-    color: #5ac85a;
+    color: #62d862;
   }
   .letters > div.yellow {
-    color: #e2cc68;
+    color: #e1c858;
   }
   .letters > div.red {
-    color: #a35555;
+    color: #cd3f3f;
   }
 
   .timer {
